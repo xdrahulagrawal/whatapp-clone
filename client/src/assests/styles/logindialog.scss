@@ -1,0 +1,28 @@
+.login-dialog-container {
+    display: flex;
+
+    .login-dialog-container-item1 {
+        padding: 56px 0 56px 56px;
+
+        .login-dialog-container-item1-item1 {
+            font-size: 26px;
+            color: #525252;
+            font-weight: 300;
+            font-family: inherit;
+            margin-bottom: 25px;
+
+        }
+
+        li {
+            padding: 0;
+            margin-top: 15px;
+            font-size: 18px;
+            line-height: 28px;
+            color: #4a4a4a;
+        }
+    }
+}
+
+.login-dialog-container-item2-item1 {
+    margin: 50px 0 0 50px;
+}
