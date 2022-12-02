@@ -1,7 +1,9 @@
-import React from 'react'
+import React from 'react';
+import { GoogleLogin } from '@react-oauth/google';
 import { Dialog, Typography, List, ListItem } from '@mui/material';
 import qrimage from '../../assests/images/qrcode.jpg'
-import '../../assests/styles/logindialog.scss'
+import '../../assests/styles/logindialog.scss';
+import jwt_decode from 'jwt-decode'
 
 
 function LoginDialog() {
@@ -16,6 +18,14 @@ function LoginDialog() {
     overflow: 'hidden',
   }
 
+  /**After login response convert decode information*/
+  const _onLoginSuccess = (res) => {
+    const decode = jwt_decode(res.credential)
+  }
+
+  const _onLoginError = (res) => {
+    console.log('Login Failed', res);
+  }
   return (
     <Dialog open={true} PaperProps={{ sx: dialogStyle }}>
       <div className='login-dialog-container'>
@@ -30,6 +40,9 @@ function LoginDialog() {
         </div>
         <div className='login-dialog-container-item2'>
           <img src={qrimage} alt='qr-code' width={264} height={264} className='login-dialog-container-item2-item1' />
+          <div className='login-dialog-container-item2-item2'>
+            <GoogleLogin onSuccess={_onLoginSuccess} onError={_onLoginError} />
+          </div>
         </div>
       </div>
     </Dialog>

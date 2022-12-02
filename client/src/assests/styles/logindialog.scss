@@ -21,8 +21,18 @@
             color: #4a4a4a;
         }
     }
-}
 
-.login-dialog-container-item2-item1 {
-    margin: 50px 0 0 50px;
+    .login-dialog-container-item2 {
+        position: relative;
+
+        .login-dialog-container-item2-item1 {
+            margin: 50px 0 0 50px;
+        }
+
+        .login-dialog-container-item2-item2 {
+            position: absolute;
+            top: 50%;
+            left: 30%;
+        }
+    }
 }
